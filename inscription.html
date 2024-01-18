@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8 /">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="Viewport" content="width-device-width, initial-scale-1.0"/>
+        <link rel="stylesheet" href="forme.css"/>
+        <title>Inscription</title>
+        
+    </head>
+    <body>
+        <div class="contenu">
+            <nav>
+                <a href="#" class="logo">Rudy Concentration</a>
+                <ul>
+                    <li><a href="Couverture.html">Accueil</a></li>
+                    <li><a href="inscription.html">Connection</a></li>
+                    <li><a href="services.html">Nos Services</a></li>
+                    <li><a href="A propos.html">A propos</a></li>
+                    <li>
+                        <button class="btn" id="displayform">Connecter</button>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <div class="sec-contenu">
+                    <div class="form-wrapper">
+                        <div class="card">
+                            <div class="card-header">
+                                <div id="forLogin" class="form-header active">Se connecter</div>
+                                <div id="forRegister" class="form-header">S'inscrire</div>
+                            </div>
+                                <div class="card-body" id="formcontainer">
+                                    <form id="loginForm">
+                                        <input type="text" class="form-control" placeholder="@utilisateur"/>
+                                        <input type="password" class="form-control" placeholder="@Mot de passe"/>
+                                        <button class="formbutton">Connection</button>
+                                    </form>
+                                    <form id="registerForm" class="toggleform">
+                                        <input type="text" class="form-control" placeholder="@utilisateur"/>
+                                        <input type="password" class="form-control" placeholder="@Mot de passe"/>
+                                        <input type="password" class="form-control" placeholder="@Confirmer mot de passe"/>
+                                        <button class="formbutton">Inscription</button>
+                                    </form>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                
+                    
+            </section>
+        </div>
+      <script>
+        const displayform = _('displayform');
+        const forLogin = _('forLogin');
+        const loginForm = _('loginForm');
+        const forRegister = _('forRegister');
+        const registerForm = _('registerForm');
+        const formcontainer = _('formcontainer');
+        displayform.addEventListener('click', showform);
+
+        forRegister.addEventListener('click', () =>{
+            forLogin.classList.remove('active');
+            forRegister.classList.add('active');
+            if(registerForm.classlist.contains('toggleform')){
+                formcontainer.style.transform = 'translate(-100%)';
+                formcontainer.style.transition = 'transform .5s';
+                registerForm.classList.remove('toggleform');
+                loginForm.classList.add('toggleform');
+
+            }
+        })
+
+        function _(e) {
+            return document.getElementById(e);
+        }
+
+        function showform(){
+            document.querySelector('.form-wrapper .card').classList.toggle('show')
+        }
+       </script>
+      
+        
+        
+    </body>
+</html>
+
